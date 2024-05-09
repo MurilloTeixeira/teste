@@ -4,3 +4,10 @@ https://futurocodebackend-ureotn5zxq-uc.a.run.app/
 
 Endereço do Swagger Backend
 https://futurocodebackend-ureotn5zxq-uc.a.run.app/api-docs/
+
+
+Entrar no diretorio da aula/frontend
+
+/workspaces/aulas (main) $ cd dia10/frontend 
+/workspaces/aulas/dia10/frontend (main) $  npm install
+/workspaces/aulas/dia10/frontend (main) $  npm run serve

@@ -1,21 +1,15 @@
 <template>
-  <div>
-    <PaginaBranco /><hr>
-    
-  </div>
-
+  <img alt="Vue logo" src="./assets/logo.png">
+  <HelloWorld msg="Bem vindos a aula de VueJS ABC Aprendiz !!!! através da variavel"/>
 </template>
 
 <script>
-import PaginaBranco from './components/PaginaBranco.vue';
-
-
+import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
   components: {
-    PaginaBranco,
-    
+    HelloWorld
   }
 }
 </script>
