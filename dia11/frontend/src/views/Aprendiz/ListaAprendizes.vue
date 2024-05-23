@@ -6,11 +6,13 @@
     <table class="centralized-table">
         <tr>
             <th>ID</th>
+            <th>Aatricula</th>
             <th>Nome</th>
             <th>Ações</th>
         </tr>
         <tr v-for="aprendiz in aprendizes" :key="aprendiz.id">
             <td>{{ aprendiz.id }}</td>
+            <td>{{ aprendiz.matricula }}</td>
             <td>{{ aprendiz.nome }}</td>
             <td>
                 <button @click="editarAprendiz(aprendiz.id)">Editar</button>|
