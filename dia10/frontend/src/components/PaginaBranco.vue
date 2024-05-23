@@ -5,7 +5,7 @@
       <thead>
         <tr>
           <th>Nome</th>
-          <th>Matrícula</th>
+          <th>Matrícula e</th>
           <th>Turma</th>
           <th>Endereço</th>
           <th>Cidade</th>
