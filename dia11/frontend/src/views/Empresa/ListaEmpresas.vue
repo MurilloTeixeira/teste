@@ -1,6 +1,7 @@
 <template>
     <h1>Empresas</h1>
 
+
     <button @click="criarNova">Nova Empresa</button>
 
     <table class="centralized-table">
@@ -18,6 +19,7 @@
             </td>
         </tr>
     </table>
+
 </template>
 
 <script>
@@ -27,12 +29,15 @@ export default {
     data() {
         return {
             empresas: []
+
         }
     },
 
     created() {
+
         this.listarEmpresas();
     },
+
 
     methods: {
         async listarEmpresas() {
@@ -57,18 +62,21 @@ export default {
                     this.listarEmpresas(); // Atualizar a lista após a deleção
                 } catch (error) {
                     console.error('Erro ao deletar empresa:', error);
+
                     alert('Erro ao deletar empresa');
                 }
             }
         }
     }
 };
+
 </script>
 
 <style>
 /* Estilo para centralizar a tabela e definir a largura */
 .centralized-table {
     width: 80%;
+
     margin: 0 auto; /* Centraliza a tabela */
     border-collapse: collapse; /* Remove os espaços entre as bordas das células */
 }
@@ -76,11 +84,14 @@ export default {
 /* Estilo para as linhas pares */
 .centralized-table tr:nth-child(even) {
     background-color: #f9f9f9; /* Cor de fundo para linhas pares */
+
 }
 
 /* Estilo para as linhas ímpares */
 .centralized-table tr:nth-child(odd) {
+
     background-color: #ffffff; /* Cor de fundo para linhas ímpares */
+
 }
 
 /* Estilo para as bordas das células */
@@ -96,4 +107,6 @@ export default {
     background-color: #4CAF50;
     color: white;
 }
+
 </style>
+

@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import AprendizForm from '@/views/Aprendiz/AprendizForm.vue';
 import EmpresaForm from '@/views/Empresa/EmpresaForm.vue';
+import ListaEmpresas from '@/views/Empresa/ListaEmpresas.vue';
 
 const routes = [
   {
@@ -25,20 +26,26 @@ const routes = [
     component: AprendizForm
   },
   {
+    path: '/empresa/novo',
+    name: 'NovoEmpresa',
+    component: EmpresaForm
+  },
+  {
     path: '/aprendiz/:id',
     name: 'EditarAprendiz',
     component: AprendizForm
   },
-  {
+    {
     path: '/empresas',
-    name: 'empresas',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Empresa/ListaEmpresas.vue')
+    name: 'ListarEmpresas',
+    component: ListaEmpresas
   },
   {
-    path: '/empresa/novo',
-    name: 'NovoEmpresa',
+    path: '/empresa/:id',
+    name: 'EditarEmpresa',
     component: EmpresaForm
-  }
+  },
+
 ]
 
 

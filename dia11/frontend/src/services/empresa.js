@@ -3,7 +3,8 @@ import axios from 'axios';
 
 const urlApi = "https://futurocodebackend-ureotn5zxq-uc.a.run.app/empresa"
 
-class  AprendizService {
+class  EmpresaService {
+
 
    
 
@@ -16,12 +17,14 @@ class  AprendizService {
 
     }
 
-    gravar(aprendiz) {
+
+    gravar(empresa) {
     
-        if (aprendiz.id) {
-          return axios.put(`${urlApi}/${aprendiz.id}`, aprendiz)
+        if (empresa.id) {
+          return axios.put(`${urlApi}/${empresa.id}`, empresa)
         } else {
-          return axios.post(`${urlApi}/`, aprendiz)
+          return axios.post(`${urlApi}/`, empresa)
+
         }
     }
 
@@ -31,4 +34,5 @@ class  AprendizService {
 
 }
 
-export default new AprendizService();
+
+export default new EmpresaService();
