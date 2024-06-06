@@ -1,7 +1,8 @@
 <template>
     <h1>Empresas</h1>
 
-    <button @click="criarNovo">Nova Empresa</button>
+
+    <button @click="criarNova">Nova Empresa</button>
 
     <table class="centralized-table">
         <tr>
@@ -19,18 +20,16 @@
         </tr>
     </table>
 
-
 </template>
 
 <script>
-
 import EmpresaService from '@/services/empresa';
 
 export default {
-
     data() {
         return {
-            empresas: {}
+            empresas: []
+
         }
     },
 
@@ -38,6 +37,8 @@ export default {
 
         this.listarEmpresas();
     },
+
+
     methods: {
         async listarEmpresas() {
             try {
@@ -45,10 +46,11 @@ export default {
                 this.empresas = response.data;
             } catch (error) {
                 console.error('Erro ao listar empresas:', error);
+                alert('Erro ao listar empresas');
             }
         },
-        criarNovo() {
-            this.$router.push('/empresa/novo');
+        criarNova() {
+            this.$router.push('/empresa/nova');
         },
         editarEmpresa(id) {
             this.$router.push(`/empresa/${id}`);
@@ -60,15 +62,13 @@ export default {
                     this.listarEmpresas(); // Atualizar a lista após a deleção
                 } catch (error) {
                     console.error('Erro ao deletar empresa:', error);
+
+                    alert('Erro ao deletar empresa');
                 }
             }
-        },
-    },
-
-}
-
-
-
+        }
+    }
+};
 
 </script>
 
@@ -76,24 +76,22 @@ export default {
 /* Estilo para centralizar a tabela e definir a largura */
 .centralized-table {
     width: 80%;
-    margin: 0 auto;
-    /* Centraliza a tabela */
-    border-collapse: collapse;
-    /* Remove os espaços entre as bordas das células */
+
+    margin: 0 auto; /* Centraliza a tabela */
+    border-collapse: collapse; /* Remove os espaços entre as bordas das células */
 }
-
-
 
 /* Estilo para as linhas pares */
 .centralized-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-    /* Cor de fundo para linhas pares */
+    background-color: #f9f9f9; /* Cor de fundo para linhas pares */
+
 }
 
 /* Estilo para as linhas ímpares */
 .centralized-table tr:nth-child(odd) {
-    background-color: #ffffff;
-    /* Cor de fundo para linhas ímpares */
+
+    background-color: #ffffff; /* Cor de fundo para linhas ímpares */
+
 }
 
 /* Estilo para as bordas das células */
@@ -109,4 +107,6 @@ export default {
     background-color: #4CAF50;
     color: white;
 }
+
 </style>
+

@@ -4,8 +4,6 @@ import AprendizForm from '@/views/Aprendiz/AprendizForm.vue';
 import EmpresaForm from '@/views/Empresa/EmpresaForm.vue';
 import ListaEmpresas from '@/views/Empresa/ListaEmpresas.vue';
 
-
-
 const routes = [
   {
     path: '/',
@@ -47,7 +45,9 @@ const routes = [
     name: 'EditarEmpresa',
     component: EmpresaForm
   },
+
 ]
+
 
 const router = createRouter({
   history: createWebHashHistory(),

@@ -1,0 +1,250 @@
+<template>
+    <div>
+        <h1>{{ id ? 'Editar Empresa' : 'Adicionar Empresa' }}</h1>
+        <form @submit.prevent="salvar" class="form-container">
+            <div>
+                <label for="matricula">Matrícula:</label>
+                <input type="number" v-model="empresa.matricula" id="matricula" required>
+                <span v-if="errors.matricula" class="error">{{ errors.matricula }}</span>
+            </div>
+            <div>
+                <label for="nome">Nome:</label>
+                <input type="text" v-model="empresa.nome" id="nome" required>
+                <span v-if="errors.nome" class="error">{{ errors.nome }}</span>
+            </div>
+            <div>
+                <label for="turma">Turma:</label>
+                <input type="number" v-model="empresa.turma" id="turma">
+            </div>
+            <div>
+                <label for="endereco">Endereço:</label>
+                <input type="text" v-model="empresa.endereco" id="endereco">
+            </div>
+            <div>
+                <label for="complemento">Complemento:</label>
+                <input type="text" v-model="empresa.complemento" id="complemento">
+            </div>
+            <div>
+                <label for="bairro">Bairro:</label>
+                <input type="text" v-model="empresa.bairro" id="bairro">
+            </div>
+            <div>
+                <label for="cidade">Cidade:</label>
+                <input type="text" v-model="empresa.cidade" id="cidade">
+            </div>
+            <div>
+                <label for="estado">Estado:</label>
+                <input type="text" v-model="empresa.estado" id="estado">
+            </div>
+            <div>
+                <label for="cep">CEP:</label>
+                <input type="text" v-model="empresa.cep" id="cep">
+            </div>
+            <div>
+                <label for="telefone1">Telefone 1:</label>
+                <input type="text" v-model="empresa.telefone1" id="telefone1">
+            </div>
+            <div>
+                <label for="telefone2">Telefone 2:</label>
+                <input type="text" v-model="empresa.telefone2" id="telefone2">
+            </div>
+            <div>
+                <label for="contato">Contato:</label>
+                <input type="text" v-model="empresa.contato" id="contato">
+            </div>
+            <div>
+                <label for="codigoPagamento">Código de Pagamento:</label>
+                <input type="text" v-model="empresa.codigoPagamento" id="codigoPagamento">
+            </div>
+            <div>
+                <label for="identificacao">Identificação:</label>
+                <input type="text" v-model="empresa.identificacao" id="identificacao">
+            </div>
+            <div>
+                <label for="dataInicio">Data de Início:</label>
+                <input type="date" v-model="empresa.dataInicio" id="dataInicio">
+            </div>
+            <div>
+                <label for="dataRegistro">Data de Registro:</label>
+                <input type="date" v-model="empresa.dataRegistro" id="dataRegistro">
+            </div>
+            <div>
+                <label for="dataTermino">Data de Término:</label>
+                <input type="date" v-model="empresa.dataTermino" id="dataTermino">
+            </div>
+            <div>
+                <label for="dataNascimento">Data de Nascimento:</label>
+                <input type="date" v-model="empresa.dataNascimento" id="dataNascimento">
+            </div>
+            <div>
+                <label for="observacao1">Observação 1:</label>
+                <input type="text" v-model="empresa.observacao1" id="observacao1">
+            </div>
+            <div>
+                <label for="observacao2">Observação 2:</label>
+                <input type="text" v-model="empresa.observacao2" id="observacao2">
+            </div>
+            <div>
+                <label for="observacao3">Observação 3:</label>
+                <input type="text" v-model="empresa.observacao3" id="observacao3">
+            </div>
+            <div>
+                <label for="nomeMae">Nome da Mãe:</label>
+                <input type="text" v-model="empresa.nomeMae" id="nomeMae">
+            </div>
+            <div>
+                <label for="cpf">CPF:</label>
+                <input type="text" v-model="empresa.cpf" id="cpf">
+            </div>
+            <div>
+                <label for="numeroCTPS">Número da CTPS:</label>
+                <input type="text" v-model="empresa.numeroCTPS" id="numeroCTPS">
+            </div>
+            <div>
+                <label for="serieCTPS">Série da CTPS:</label>
+                <input type="text" v-model="empresa.serieCTPS" id="serieCTPS">
+            </div>
+            <div>
+                <label for="direta">Direta:</label>
+                <input type="checkbox" v-model="empresa.direta" id="direta">
+            </div>
+            <div>
+                <label for="valorBolsaAuxilio">Valor da Bolsa Auxílio:</label>
+                <input type="number" v-model="empresa.valorBolsaAuxilio" id="valorBolsaAuxilio">
+            </div>
+            <div>
+                <label for="tipoContrato">Tipo de Contrato:</label>
+                <input type="text" v-model="empresa.tipoContrato" id="tipoContrato">
+            </div>
+            <div>
+                <label for="prontuario">Prontuário:</label>
+                <input type="text" v-model="empresa.prontuario" id="prontuario">
+            </div>
+            <button type="submit">Salvar</button>
+        </form>
+    </div>
+</template>
+
+<script>
+import EmpresaService from '@/services/empresa';
+
+export default {
+    data() {
+        return {
+            empresa: {
+                matricula: 0,
+                turma: 0,
+                nome: '',
+                endereco: '',
+                complemento: '',
+                bairro: '',
+                cidade: '',
+                estado: '',
+                cep: '',
+                telefone1: '',
+                telefone2: '',
+                contato: '',
+                codigoPagamento: '',
+                identificacao: '',
+                dataInicio: null,
+                dataRegistro: null,
+                dataTermino: null,
+                dataNascimento: null,
+                observacao1: '',
+                observacao2: '',
+                observacao3: '',
+                nomeMae: '',
+                cpf: '',
+                numeroCTPS: '',
+                serieCTPS: '',
+                direta: true,
+                valorBolsaAuxilio: 0,
+                tipoContrato: '',
+                prontuario: ''
+            },
+            id: null,
+            errors: {}
+        };
+    },
+    created() {
+        this.id = this.$route.params.id;
+        if (this.id) {
+            this.obterEmpresa(this.id);
+        }
+    },
+    methods: {
+        async obterEmpresa(id) {
+            try {
+                const response = await EmpresaService.obter(id);
+                this.empresa = response.data;
+            } catch (error) {
+                console.error('Erro ao obter empresa:', error);
+            }
+        },
+        async salvar() {
+            if (!this.validarFormulario()) {
+                return;
+            }
+            this.prepararDatas();
+            try {
+                if (this.id) {
+                    await EmpresaService.gravar({ ...this.empresa, id: this.id });
+                } else {
+                    await EmpresaService.gravar(this.empresa);
+                }
+                this.$router.push('/empresas'); // Navegar de volta para a lista de empresas após salvar
+            } catch (error) {
+                console.error('Erro ao salvar empresa:', error);
+            }
+        },
+        prepararDatas() {
+            const camposData = [
+                'dataInicio',
+                'dataRegistro',
+                'dataTermino',
+                'dataNascimento'
+            ];
+
+            camposData.forEach(campo => {
+                if (!this.empresa[campo]) {
+                    this.empresa[campo] = null;
+                }
+            });
+        },
+        validarFormulario() {
+            this.errors = {};
+            if (!this.empresa.matricula) {
+                this.errors.matricula = 'Matrícula é obrigatória';
+            }
+            if (!this.empresa.nome) {
+                this.errors.nome = 'Nome é obrigatório';
+            }
+            return Object.keys(this.errors).length === 0;
+        }
+    }
+};
+</script>
+
+<style scoped>
+.form-container {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    margin: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+
+.form-container div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.form-container label {
+    width: 150px;
+    margin-right: 10px;
+    text-align: right;
+}
+
