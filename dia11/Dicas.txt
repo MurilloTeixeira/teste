@@ -1,0 +1,49 @@
+instalar node e npm: https://nodejs.org/en/download/package-manager
+instalar VueJs : https://br.vuejs.org/v2/guide/installation
+
+
+Criar um projeto: https://cli.vuejs.org/guide/creating-a-project.html
+    prompt$   vue create hello-world
+OU por modo visual
+    prompt$   vue ui 
+
+Instalar Axios :  https://www.npmjs.com/package/axios
+    npm i axios
+
+Instalar Plugin Router VueJS: https://router.vuejs.org/installation
+    npm i vue-router@4
+
+
+para executar no codespace do git :
+    1 - abra o arquivo package.json 
+    2 - encontre a linha `"serve": "vue-cli-service serve",`
+    3 - altere para `"serve": "vue-cli-service serve --mode production",`
+
+
+para executar:
+    $  npm run serve
+
+Links e Canais de JavaScript e tecnologias em Português para seguir:
+
+JavaScript
+https://www.youtube.com/@ErickWendelTraining
+https://www.youtube.com/@BrazilJS
+https://www.instagram.com/erickwendel_/
+https://www.youtube.com/DevSoutinho
+https://erickwendel.teachable.com/p/node-js-para-iniciantes-nodebr?origin=CursoErickWendel
+
+
+VueJs
+https://www.youtube.com/watch?v=9DRY-aNPta0&list=PLcoYAcR89n-qTYqfWTGxXMnAvCqY3JF8w
+
+
+Angular
+https://www.youtube.com/@angularsp3351
+https://www.youtube.com/@loianegroner/playlists
+
+
+Tecnologia
+https://www.youtube.com/@FilipeDeschamps
+https://www.youtube.com/@codigofontetv
+https://www.youtube.com/@Akitando
+

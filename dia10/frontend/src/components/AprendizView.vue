@@ -49,13 +49,15 @@ export default {
   methods: {
     fetchAprendizes() {
       axios.get('https://futurocodebackend-ureotn5zxq-uc.a.run.app/aprendiz')
-        .then(response => {
+      .then(response => {
           this.aprendizes = response.data;
         })
         .catch(error => {
           console.error("Erro ao listar aprendizes:", error);
         });
     },
+
+    
     addAprendiz() {
       axios.post('https://futurocodebackend-ureotn5zxq-uc.a.run.app/aprendiz', this.newAprendiz)
         .then(() => {

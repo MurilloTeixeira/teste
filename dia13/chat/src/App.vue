@@ -1,21 +1,15 @@
 <template>
-  <div>
-    <PaginaBranco /><hr>
-    
-  </div>
-
+  
+  <MeuChatIA />
 </template>
 
 <script>
-import PaginaBranco from './components/PaginaBranco.vue';
-
-
+import MeuChatIA from './components/MeuChatIA'
 
 export default {
   name: 'App',
   components: {
-    PaginaBranco,
-    
+    MeuChatIA
   }
 }
 </script>
